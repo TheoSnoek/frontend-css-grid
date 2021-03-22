@@ -1,1 +1,47 @@
-/*Maak hier jouw CSS!*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+body {
+    display: grid;
+    background-color: navajowhite;
+    grid-template-rows: 50px 174px 100px auto 50px;
+    gap: 16px;
+    margin: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header gridC gridC"
+    "text gridC gridC"
+    "text gridE gridD"
+    "text gridE ."
+    "footer footer footer";
+
+}
+
+header, #text, #gridC, #gridD, #gridE, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    color: white;
+    background-color: darkred;
+}
+
+
+@media screen and (max-width: 576px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px;
+        grid-template-areas:
+      "header"
+      "text"
+      "gridC"
+      "gridD"
+      "gridE"
+      "footer";
+    }
+}
